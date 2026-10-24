@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NetResQ — Member 4 Complete UI & Live Demo Masterclass Guide</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm 14mm 16mm 14mm;
+      @bottom-right {
+        content: "Page " counter(page);
+        font-size: 8pt;
+        color: #64748b;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.5;
+      font-size: 9.5pt;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+
+    h1, h2, h3, h4 {
+      color: #0f2744;
+      font-weight: 700;
+      page-break-after: avoid;
+    }
+
+    h1 {
+      font-size: 20pt;
+      line-height: 1.2;
+      margin-bottom: 4px;
+      color: #0284c7;
+      border-bottom: 2.5px solid #0284c7;
+      padding-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 11pt;
+      color: #475569;
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 12.5pt;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    h3 {
+      font-size: 10.5pt;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      color: #0284c7;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 6px;
+      text-align: justify;
+    }
+
+    .badge-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-blue { background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }
+    .badge-green { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+    .badge-amber { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+
+    .ui-element-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      background: #f8fafc;
+      page-break-inside: avoid;
+    }
+
+    .ui-element-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 9.5pt;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ui-tag {
+      background: #0284c7;
+      color: #fff;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 7.5pt;
+      font-family: monospace;
+    }
+
+    .speech-box {
+      background: #f0fdf4;
+      border-left: 3px solid #10b981;
+      padding: 6px 10px;
+      margin: 5px 0;
+      font-style: italic;
+      color: #14532d;
+      font-size: 9pt;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .speech-box strong {
+      color: #065f46;
+      font-style: normal;
+    }
+
+    .formula-box {
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: "Consolas", monospace;
+      font-size: 8.5pt;
+      margin: 8px 0;
+      line-height: 1.4;
+      border: 1px solid #1e293b;
+    }
+
+    .img-container {
+      margin: 8px 0;
+      text-align: center;
+      page-break-inside: avoid;
+    }
+
+    .img-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-height: 230px;
+    }
+
+    .img-caption {
+      font-size: 7.5pt;
+      color: #64748b;
+      margin-top: 3px;
+      font-style: italic;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 8.5pt;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 7px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: #1e293b;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Title & Header -->
+  <h1>Member 4 Presentation Masterclass</h1>
+  <div class="subtitle">Complete UI Breakdown, Every Button & Slider Explained, Live Demo Script & Math Defense</div>
+
+  <div class="badge-bar">
+    <span class="badge badge-blue">Role: Frontend UI/UX & Live Demo Lead</span>
+    <span class="badge badge-green">Difficulty: Rank 2 (Visual & Demo-Driven)</span>
+    <span class="badge badge-amber">Presentation Duration: ~3.0 Minutes</span>
+  </div>
+
+  <div class="ui-element-card" style="background: #eff6ff; border-color: #bfdbfe;">
+    <strong>Your Core Mission:</strong> As Member 4, you are the <strong>Showstopper</strong> of the presentation. While Member 1 explains the problem and Member 2 explains the math, <strong>YOU make it come alive on the screen</strong>. You will click the buttons, explain every visual cue, move the sliders, and show how Quality-Aware routing detours traffic in real time!
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2>1. Overview of the Dashboard Screen</h2>
+  <p>Here is what the dashboard looks like when running live at <code>http://localhost:5173</code>:</p>
+
+  <div class="img-container">
+    <img src="images/dashboard_overview.png" alt="NetResQ Dashboard Overview">
+    <div class="img-caption">Figure 1: Full NetResQ Operations Dashboard showing header controls, 4 metric cards, and interactive SVG topology.</div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2>2. Explaining the Header Bar (Every Control Explained)</h2>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">HEADER 1</span> NetResQ Wordmark & Heartbeat Pulse Icon</div>
+    <p><strong>What it is:</strong> Top-left branding with a glowing pulse icon.</p>
+    <div class="speech-box"><strong>What to say:</strong> "NetResQ stands for Network Rescue — our Layer 3 adaptive self-healing network control system."</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">HEADER 2</span> 'BACKEND LIVE' Badge (Green / Red)</div>
+    <p><strong>What it is:</strong> Active health polling indicator querying <code>GET /api/health</code> every 3 seconds.</p>
+    <div class="speech-box"><strong>What to say:</strong> "This green badge confirms that our FastAPI control plane engine is running live and communicating with the React dashboard via REST API polling."</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">HEADER 3</span> 'SIMULATION MODE' Badge (Purple)</div>
+    <p><strong>What it is:</strong> Indicates that the system is operating in standalone software emulation mode.</p>
+    <div class="speech-box"><strong>What to say:</strong> "This displays our active operating mode. NetResQ runs standalone in simulation mode without requiring Linux root privileges, but also supports real SDN controllers via Ryu and Mininet."</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">HEADER 4</span> Route Selectors: [H1] &rarr; [H4]</div>
+    <p><strong>What it is:</strong> Dropdowns that let the operator select source and destination hosts (H1, H2, H3, H4).</p>
+    <div class="speech-box"><strong>What to say:</strong> "These dropdowns allow us to test and inspect end-to-end paths between any pair of hosts across our 3-switch triangle core."</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">HEADER 5</span> Algorithm Toggle: [Quality-Aware] vs [Baseline Dijkstra]</div>
+    <p><strong>What it is:</strong> Toggle switch that changes the active routing algorithm on the live canvas.</p>
+    <div class="speech-box"><strong>What to say:</strong> "This toggle lets us instantly switch the displayed active forwarding route between conventional hop-count Dijkstra and our Quality-Aware multi-metric algorithm."</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">HEADER 6</span> Amber 'Demo Congestion' Button 🔥 (YOUR KEY ACTION)</div>
+    <p><strong>What it is:</strong> One-click trigger that injects 65ms latency, 18% packet loss, and 85% utilization on direct link L_S1_S3.</p>
+    <div class="speech-box"><strong>What to say:</strong> "This is our primary demonstration trigger. Clicking 'Demo Congestion' injects severe delay and packet drops on link L_S1_S3, forcing Quality-Aware routing to dynamically reroute via Switch 2!"</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">HEADER 7</span> 'Reset Scenario' Button</div>
+    <p><strong>What it is:</strong> Restores all link metrics, status, and routes back to the default healthy state.</p>
+    <div class="speech-box"><strong>What to say:</strong> "Clicking 'Reset Scenario' safely resets the topology back to its clean baseline state."</div>
+  </div>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- SECTION 3 -->
+  <h2>3. Explaining the 4 Telemetry Metric Cards</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Metric Card</th>
+        <th>Value Shown</th>
+        <th>What It Measures</th>
+        <th>What You Say To Evaluator</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Switches Online</strong></td>
+        <td><code>3</code></td>
+        <td>Triangle core switches (S1, S2, S3)</td>
+        <td>"Shows all 3 OpenFlow switches in the triangle core are online and active."</td>
+      </tr>
+      <tr>
+        <td><strong>Link Health Status</strong></td>
+        <td><code>7 / 7 Links UP</code></td>
+        <td>3 core links + 4 host edge links</td>
+        <td>"Monitors physical links. When a link fails, it alerts how many links are DOWN."</td>
+      </tr>
+      <tr>
+        <td><strong>Average Link Latency</strong></td>
+        <td><code>5.5 ms</code></td>
+        <td>Network-wide average one-way delay</td>
+        <td>"Real-time average delay across active links, with packet loss and utilization."</td>
+      </tr>
+      <tr>
+        <td><strong>Network Health & Recalc</strong></td>
+        <td><code>100% | 0.48ms</code></td>
+        <td>Health score + Software recalculation time</td>
+        <td>"Health gauge penalized by loss and delay. Recalc time (0.48ms) is the CPU time required by Dijkstra to reroute traffic."</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 4 -->
+  <h2>4. The Interactive Topology Canvas & Sliding Link Inspector</h2>
+
+  <div class="img-container">
+    <img src="images/topology_inspector.png" alt="Topology View with Link Inspector">
+    <div class="img-caption">Figure 2: Clicking any link opens the right-hand Link Inspector panel with real-time sliders for latency, packet loss, and utilization.</div>
+  </div>
+
+  <h3>4.1 Understanding the Visual Styles on the Canvas:</h3>
+  <ul>
+    <li><strong>Switches (S1, S2, S3):</strong> Dark rounded cards with blue borders and DPID identifiers.</li>
+    <li><strong>Hosts (H1, H2, H3, H4):</strong> Circular endpoints showing IP addresses (e.g. <code>10.0.0.1</code> to <code>10.0.0.4</code>).</li>
+    <li><strong>Green Solid Lines:</strong> Healthy active links.</li>
+    <li><strong>Amber Solid Lines:</strong> Degraded links suffering high latency or loss.</li>
+    <li><strong>Red-Dashed Lines:</strong> Failed / severed links (status = <code>DOWN</code>).</li>
+    <li><strong>Neon Cyan Glowing Flowing Line:</strong> The <strong>ACTIVE FORWARDING ROUTE</strong>. Animated using CSS keyframe dash-offsets to represent real packets moving across the path!</li>
+  </ul>
+
+  <h3>4.2 Explaining the Sliding Inspector Window (Right Panel):</h3>
+  <div class="ui-element-card">
+    <p>When you click on any link (e.g., <code>L_S1_S3</code>), the right panel slides open:</p>
+    <ul>
+      <li><strong>Link ID & Endpoints:</strong> Shows <code>L_S1_S3 (S1 &harr; S3)</code>.</li>
+      <li><strong>Fail Link / Restore Link Button:</strong> Manually cuts or restores the link.</li>
+      <li><strong>Latency Slider (1ms - 150ms):</strong> Simulates fiber distance or propagation delays.</li>
+      <li><strong>Packet Loss Slider (0% - 50%):</strong> Simulates packet drops caused by queue overflow.</li>
+      <li><strong>Utilization Slider (0% - 100%):</strong> Simulates traffic bandwidth congestion.</li>
+      <li><strong>'Apply Metrics Update' Button:</strong> Sends <code>POST /api/links/{id}/metrics</code> to re-evaluate the graph.</li>
+    </ul>
+    <div class="speech-box"><strong>What to say:</strong> "Our interactive inspector allows the operator to select any link and manually test line failures or adjust latency and loss sliders to see the routing engine adapt in real time."</div>
+  </div>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- SECTION 5 -->
+  <h2>5. Routing Analysis & Performance Comparison</h2>
+
+  <div class="img-container">
+    <img src="images/routing_analysis.png" alt="Routing Analysis Tab">
+    <div class="img-caption">Figure 3: Side-by-side comparison between Baseline Dijkstra and Quality-Aware Routing with the Hop Breakdown Table.</div>
+  </div>
+
+  <p>
+    When you click the <strong>"Routing Analysis & Proof"</strong> tab, you show this screen. Here is how to explain every section:
+  </p>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">CARD 1</span> Baseline Dijkstra Routing (Left Card)</div>
+    <p>Shows: <code>H1 &rarr; S1 &rarr; S3 &rarr; H4</code> (3 hops, Cost: 3.0).</p>
+    <div class="speech-box"><strong>What to say:</strong> "Notice on the left: Baseline Dijkstra only minimizes hop count. Even when link L_S1_S3 is degraded with 18% packet loss, Dijkstra is trapped on the direct 3-hop route because 3 hops is mathematically less than 4 hops."</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">CARD 2</span> Proposed Quality-Aware Routing (Right Card)</div>
+    <p>Shows: <code>H1 &rarr; S1 &rarr; S2 &rarr; S3 &rarr; H4</code> (4 hops, Cost: 4.79 vs 6.12).</p>
+    <div class="speech-box"><strong>What to say:</strong> "On the right, NetResQ's Quality-Aware routing penalizes the lossy link. It automatically chooses the 4-hop path through S2 because its composite cost (4.79) is cheaper than the degraded direct path (6.12)!"</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">TABLE</span> Active Path Hop Breakdown Table</div>
+    <p>Lists every link on the chosen route with exact measurements: Latency (ms), Loss (%), Utilization (%), and Calculated Edge Cost.</p>
+    <div class="speech-box"><strong>What to say:</strong> "This table provides full explainability, showing the exact latency and cost breakdown for each individual hop on the selected route."</div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <h2>6. Telemetry Trend Chart & Audit Event Stream</h2>
+
+  <div class="img-container">
+    <img src="images/telemetry_events.png" alt="Telemetry Trend and Event Stream">
+    <div class="img-caption">Figure 4: Real-time SVG telemetry trend line chart and chronological operational event log.</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">CHART</span> Real-Time Network Telemetry Trend Chart</div>
+    <p>Custom SVG line chart plotting rolling snapshots of Latency (cyan) and Health Score (green).</p>
+    <div class="speech-box"><strong>What to say:</strong> "This chart renders a rolling historical trend of average latency and health score, updating every 3 seconds to show network stability over time."</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">AUDIT LOG</span> Operational Event Log</div>
+    <p>Reverse chronological list with severity badges (<code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>SUCCESS</code>), timestamps, and JSON details.</p>
+    <div class="speech-box"><strong>What to say:</strong> "Every link failure, restoration, and rerouting action is audited here with timestamps and failover duration, providing complete operational transparency."</div>
+  </div>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- SECTION 7 -->
+  <h2>7. The Formula Part: How to Explain It Simply</h2>
+
+  <p>
+    During your demo, the evaluator may ask: <em>"How does the algorithm calculate the cost to decide which route to take?"</em><br>
+    Here is the exact formula and the simple way to explain it:
+  </p>
+
+  <div class="formula-box">
+normalized_latency = latency_ms / 50.0 ms
+normalized_loss    = packet_loss_percent / 100.0
+normalized_util    = utilization_percent / 100.0
+
+link_cost = (1.0 &times; C_admin) + (1.0 &times; norm_latency) + (2.0 &times; norm_loss) + (1.5 &times; norm_util)
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title">The 3-Sentence Formula Punchline (Memorize This!):</div>
+    <div class="speech-box">
+      <strong>"We normalize latency against 50ms, and packet loss and utilization into decimals between 0 and 1. We assign the highest weight (2.0) to packet loss because packet drops destroy TCP performance. When direct link L_S1_S3 suffers 18% loss, its calculated cost spikes from 1.44 to 3.94, making the 4-hop clean route via S2 mathematically cheaper (4.79 vs 6.12)!"</strong>
+    </div>
+  </div>
+
+  <!-- SECTION 8 -->
+  <h2>8. Step-by-Step Live Demo Script (Word-for-Word)</h2>
+
+  <p>Follow this exact 5-step script during your presentation:</p>
+
+  <div class="ui-element-card">
+    <strong>Step 1 — Introduce the UI (30 Seconds):</strong><br>
+    <em>"Respected evaluators, I am [Name], and I will demonstrate the NetResQ Operations Dashboard. As you can see, the UI is designed like a carrier-grade Network Operations Center. In our 3-switch triangle core, all 7 links are currently green and healthy. The active route between Host H1 and Host H4 is highlighted by this glowing cyan animated line, representing live packets flowing across the direct 3-hop route."</em>
+  </div>
+
+  <div class="ui-element-card">
+    <strong>Step 2 — Click 'Demo Congestion' (45 Seconds):</strong><br>
+    <em>"Now, let me trigger our primary test case. I will click the amber 'Demo Congestion' button in the header. Notice what happens immediately: direct link L_S1_S3 turns yellow with 65ms latency and 18% packet loss. Watch the glowing cyan active route: it has automatically detoured through Switch 2! Even though going through S2 takes 4 hops instead of 3, our Quality-Aware algorithm avoids the congested link to protect quality."</em>
+  </div>
+
+  <div class="ui-element-card">
+    <strong>Step 3 — Show the Comparison Proof (45 Seconds):</strong><br>
+    <em>"Let us click on the 'Routing Analysis & Proof' tab. Look at the two cards side-by-side: Baseline Dijkstra is trapped on the direct 3-hop link with 18% packet loss. But NetResQ's Quality-Aware routing chose the 4-hop path because its composite cost is only 4.79 compared to 6.12. The table below shows the exact latency and cost breakdown for each individual hop."</em>
+  </div>
+
+  <div class="ui-element-card">
+    <strong>Step 4 — Show Link Failure & Self-Healing (45 Seconds):</strong><br>
+    <em>"Now back on the topology, let me simulate a total fiber cut. I click link L_S1_S3 and click 'Fail Link'. The link turns red-dashed. Our self-healing engine detects the break and recalculates an alternate route in just 0.48 milliseconds, as audited in our Operational Events log. When I click 'Restore Link', the link turns green and normal service resumes."</em>
+  </div>
+
+  <div class="ui-element-card">
+    <strong>Step 5 — Conclude & Reset (15 Seconds):</strong><br>
+    <em>"Finally, I click 'Reset Scenario' to return our network back to its clean baseline state. This completes our live demonstration of NetResQ."</em>
+  </div>
+
+  <hr style="border: 0; border-top: 1px solid #cbd5e1; margin-top: 16px; margin-bottom: 8px;">
+  <div style="text-align: center; font-size: 7.5pt; color: #64748b;">
+    NetResQ: Member 4 UI Breakdown & Live Demonstration Guide &bull; October 2026
+  </div>
+
+</body>
+</html>
