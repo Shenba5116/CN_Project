@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NetResQ — 4-Member Project Presentation & Viva Defense Guide</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 15mm 16mm 15mm;
+      @bottom-right {
+        content: "Page " counter(page);
+        font-size: 8.5pt;
+        color: #64748b;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.5;
+      font-size: 9.5pt;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+
+    h1 {
+      font-size: 20pt;
+      line-height: 1.2;
+      margin-bottom: 4px;
+      color: #0369a1;
+      border-bottom: 2.5px solid #0284c7;
+      padding-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 11pt;
+      color: #475569;
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .member-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .member-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .member-title {
+      font-size: 13pt;
+      font-weight: 700;
+      color: #0f2744;
+    }
+
+    .member-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    .section-title {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #0284c7;
+      margin-top: 8px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    ul, ol {
+      margin-top: 2px;
+      margin-bottom: 6px;
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+
+    .script-box {
+      background: #f8fafc;
+      border-left: 3px solid #0284c7;
+      padding: 8px 12px;
+      margin: 6px 0;
+      font-style: italic;
+      color: #1e293b;
+      font-size: 9pt;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .qa-box {
+      background: #f1f5f9;
+      border-radius: 4px;
+      padding: 6px 10px;
+      margin: 4px 0;
+      font-size: 9pt;
+    }
+    .qa-q {
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .qa-a {
+      color: #334155;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 8.5pt;
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>NetResQ — Team Presentation & Defense Plan</h1>
+  <div class="subtitle">Structured 4-Member Project Walkthrough, Speaking Scripts & Viva Q&A</div>
+
+  <!-- Quick Summary Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Member</th>
+        <th>Primary Topic</th>
+        <th>Key Code Files</th>
+        <th>Live Dashboard Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Member 1</strong></td>
+        <td>Problem Statement, SDN Philosophy, OSI Layer 3</td>
+        <td><code>backend/app/config.py</code></td>
+        <td>Overview cards, Header status, Triangle intro</td>
+      </tr>
+      <tr>
+        <td><strong>Member 2</strong></td>
+        <td>Metric Normalization, Composite Cost, Dijkstra Proof</td>
+        <td><code>app/algorithms/quality_aware.py</code></td>
+        <td>Routing Analysis tab, Hop breakdown table</td>
+      </tr>
+      <tr>
+        <td><strong>Member 3</strong></td>
+        <td>Self-Healing Engine, Failover Timing, REST API</td>
+        <td><code>app/services/simulation_service.py</code></td>
+        <td>Fail Link button, 0.48ms recalc badge, Event log</td>
+      </tr>
+      <tr>
+        <td><strong>Member 4</strong></td>
+        <td>Operations UI, Demo Congestion, Ryu/Mininet</td>
+        <td><code>frontend/src/components/TopologyView.tsx</code></td>
+        <td>Demo Congestion button, Weight sliders, Reset</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- MEMBER 1 -->
+  <div class="member-card">
+    <div class="member-header">
+      <div class="member-title">👤 Member 1: Project Lead & Architecture Specialist</div>
+      <div class="member-badge">Background & Architecture (~2.5 Mins)</div>
+    </div>
+
+    <div class="section-title">Core Concepts to Explain:</div>
+    <ul>
+      <li><strong>The "Blind Shortest Path" Flaw:</strong> Traditional OSPF/RIP routing follows static hop counts. If a link has 65ms delay and 20% loss, standard Dijkstra still sends packets through it because the configured cost is static.</li>
+      <li><strong>The NetResQ Solution:</strong> Adaptive self-healing routing at <strong>OSI Layer 3</strong> that continuously evaluates link quality.</li>
+      <li><strong>SDN Architecture:</strong> Decoupling the <strong>Control Plane</strong> (decision logic in FastAPI + NetworkX) from the <strong>Data Plane</strong> (OpenFlow switches forwarding packets).</li>
+      <li><strong>Network Graph:</strong> 3-switch triangle core (S1, S2, S3) with 4 attached hosts (H1, H2 on S1; H3 on S2; H4 on S3).</li>
+    </ul>
+
+    <div class="section-title">Live Dashboard Actions:</div>
+    <ul>
+      <li>Open <code>http://localhost:5173</code>. Point to header: "NetResQ", "BACKEND LIVE", "SIMULATION MODE".</li>
+      <li>Highlight the Overview metric cards: Switches Online (3), Healthy Links (7), Failures (0), Health Score (100%).</li>
+    </ul>
+
+    <div class="section-title">Speaking Script / Pitch:</div>
+    <div class="script-box">
+      "Good morning, respected evaluators. I am [Name], presenting the architecture of NetResQ. In traditional networks, routing protocols like OSPF calculate paths using static administrative hop costs. When an intermediate link experiences congestion or packet drops without a physical cable cut, standard routing is completely blind to it. NetResQ solves this by introducing dynamic telemetry and self-healing at OSI Layer 3. We use an SDN architecture where our FastAPI control plane maintains an authoritative NetworkX graph model. I will now hand over to [Member 2] to explain the mathematical routing algorithm."
+    </div>
+
+    <div class="section-title">Key Viva Questions & Answers:</div>
+    <div class="qa-box">
+      <span class="qa-q">Q: Which OSI layer does NetResQ operate at?</span><br>
+      <span class="qa-a">A: OSI Layer 3 (Network Layer), responsible for end-to-end path determination across switches and subnets.</span>
+    </div>
+    <div class="qa-box">
+      <span class="qa-q">Q: What is the separation of planes in SDN?</span><br>
+      <span class="qa-a">A: Decoupling the decision-making logic (Control Plane) from underlying packet forwarding hardware (Data Plane).</span>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- MEMBER 2 -->
+  <div class="member-card">
+    <div class="member-header">
+      <div class="member-title">👤 Member 2: Routing Algorithms & Math Lead</div>
+      <div class="member-badge">Algorithms & Math (~3 Mins)</div>
+    </div>
+
+    <div class="section-title">Core Concepts to Explain:</div>
+    <ul>
+      <li><strong>Why Normalization is Required:</strong> Milliseconds (e.g. 60ms), percentages (e.g. 18%), and administrative costs cannot be summed directly. NetResQ normalizes each metric into dimensionless [0, 1] scales.</li>
+      <li><strong>Normalization Formulas:</strong>
+        <code>norm_lat = lat / 50ms</code>, <code>norm_loss = loss% / 100</code>, <code>norm_util = util% / 100</code>.
+      </li>
+      <li><strong>Composite Cost Formula:</strong>
+        <code>link_cost = (w_cost &times; C) + (w_lat &times; norm_lat) + (w_loss &times; norm_loss) + (w_util &times; norm_util)</code>.
+      </li>
+      <li><strong>Proof of Dijkstra Correctness:</strong> Since all weights &ge; 0 and metrics &ge; 0, and cost floor is 0.001, no negative cycles can exist. Dijkstra is mathematically guaranteed to find the global minimum cost.</li>
+      <li><strong>Worked Example (H1 &rarr; H4):</strong>
+        Path A (Direct S1-S3, 18% loss): Cost = <strong>6.12</strong>.<br>
+        Path B (Detour via S2, 0% loss): Cost = <strong>4.79</strong>.<br>
+        Quality-Aware picks Path B because 4.79 &lt; 6.12, saving 54ms delay and 18% loss!
+      </li>
+    </ul>
+
+    <div class="section-title">Live Dashboard Actions:</div>
+    <ul>
+      <li>Click on the <strong>"Routing Analysis & Proof"</strong> tab.</li>
+      <li>Walk through side-by-side comparison cards and point to the per-link cost breakdown table.</li>
+    </ul>
+
+    <div class="section-title">Speaking Script / Pitch:</div>
+    <div class="script-box">
+      "I am [Name], and I will explain the mathematical core of NetResQ. To overcome static hop counting, we developed a multi-metric composite cost function. Because milliseconds and percentages have incompatible units, we first normalize latency against a 50ms reference, and loss and utilization into decimals between 0 and 1. We weight packet loss higher at 2.0 to aggressively penalize drop-prone links. Crucially, because all edge costs are strictly positive (&ge; 0.001), Dijkstra's algorithm is mathematically guaranteed to find the global optimum. As seen on our screen, when direct link S1-S3 degrades, our formula proves that a 4-hop clean path has a lower composite cost (4.79) than a degraded 3-hop path (6.12). I will now pass to [Member 3] to show how the self-healing failover engine operates."
+    </div>
+
+    <div class="section-title">Key Viva Questions & Answers:</div>
+    <div class="qa-box">
+      <span class="qa-q">Q: Why not use Bellman-Ford instead of Dijkstra?</span><br>
+      <span class="qa-a">A: Bellman-Ford is slower (O(V &times; E)) and only needed for negative edge weights. Because our composite cost function guarantees strictly positive costs, Dijkstra (O(E + V log V)) is faster and globally optimal.</span>
+    </div>
+  </div>
+
+  <!-- MEMBER 3 -->
+  <div class="member-card">
+    <div class="member-header">
+      <div class="member-title">👤 Member 3: Self-Healing Engine & API Specialist</div>
+      <div class="member-badge">Failover & Backend (~3 Mins)</div>
+    </div>
+
+    <div class="section-title">Core Concepts to Explain:</div>
+    <ul>
+      <li><strong>Failure Handling:</strong> Failed links are marked <code>DOWN</code> in the authoritative simulation adapter. Graph building skips them: <code>if link.status == 'down': continue</code>.</li>
+      <li><strong>Automated Failover:</strong> Dijkstra recalculates active routes in <strong>sub-millisecond time (~0.48ms)</strong>.</li>
+      <li><strong>Monotonic Clock Benchmarking:</strong> Measures recalculation time via Python's <code>time.perf_counter()</code>.</li>
+      <li><strong>Network Partition Handling:</strong> If all paths fail, <code>networkx.has_path()</code> returns False; API cleanly returns status <code>"no_path"</code> without crashing.</li>
+      <li><strong>FastAPI Endpoints:</strong> <code>GET /api/topology</code>, <code>POST /api/links/{id}/fail</code>, <code>POST /api/links/{id}/restore</code>, <code>GET /api/events</code>.</li>
+    </ul>
+
+    <div class="section-title">Live Dashboard Actions:</div>
+    <ul>
+      <li>Go to the <strong>"Network Topology & Control"</strong> tab.</li>
+      <li>Click core link <code>L_S1_S3</code>, click red <strong>"Fail Link"</strong> button. Show the link turning red-dashed and route switching to S2 in <strong>0.48ms</strong>!</li>
+      <li>Open the <strong>"Operational Events"</strong> tab to show the recorded warning event. Click <strong>"Restore Link"</strong> to show recovery.</li>
+    </ul>
+
+    <div class="section-title">Speaking Script / Pitch:</div>
+    <div class="script-box">
+      "I am [Name], in charge of the self-healing failover engine and backend services. Our backend is built on FastAPI and Uvicorn. When a link fails, our SimulationService immediately excludes that edge from the NetworkX graph. Notice on our screen: as I click 'Fail Link' on L_S1_S3, the topology instantly turns red-dashed, and our self-healing engine detects the loss, recalculates the path through S2, and restores connectivity in just 0.48 milliseconds. We measure this software execution time using Python's monotonic clock. I now hand over to [Member 4] to demonstrate congestion scenarios and our SDN emulation."
+    </div>
+
+    <div class="section-title">Key Viva Questions & Answers:</div>
+    <div class="qa-box">
+      <span class="qa-q">Q: What is the difference between software rerouting time and physical recovery time?</span><br>
+      <span class="qa-a">A: Software route computation (~0.5ms) is CPU time to prune the graph and run Dijkstra. Physical recovery in hardware includes carrier loss detection and OpenFlow OFPFlowMod rule installation (typically 20ms to 100ms).</span>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- MEMBER 4 -->
+  <div class="member-card">
+    <div class="member-header">
+      <div class="member-title">👤 Member 4: UI/UX, Live Demo & SDN Emulation Lead</div>
+      <div class="member-badge">Demo & SDN Integration (~3 Mins)</div>
+    </div>
+
+    <div class="section-title">Core Concepts to Explain:</div>
+    <ul>
+      <li><strong>Frontend Architecture:</strong> React 19 + TypeScript + Vite. Custom responsive SVG canvas rendering for nodes and edges with zero external chart bloat.</li>
+      <li><strong>Animated Active Route:</strong> Cyan glowing packet flow animation (<code>active-route-line</code>).</li>
+      <li><strong>Congestion Injection Demo:</strong> Injects 65ms latency and 18% loss on <code>L_S1_S3</code>. Shows Quality-Aware routing dynamically detouring via S2 while Baseline Dijkstra stays trapped on congested link.</li>
+      <li><strong>Dynamic Weight Sliders:</strong> Settings tab allows tuning loss and latency weights live.</li>
+      <li><strong>Real SDN Integration (Ryu + Mininet):</strong> Scripts provided for Linux/WSL2 (<code>mininet_topology.py</code> and <code>ryu_controller.py</code>).</li>
+    </ul>
+
+    <div class="section-title">Live Dashboard Actions:</div>
+    <ul>
+      <li>Click the amber <strong>"Demo Congestion"</strong> button in the header. Show active route detouring around congested link.</li>
+      <li>Navigate to <strong>"Settings & Weights"</strong> tab and drag the Packet Loss Weight slider.</li>
+      <li>Click <strong>"Reset Scenario"</strong> to restore clean baseline.</li>
+    </ul>
+
+    <div class="section-title">Speaking Script / Pitch:</div>
+    <div class="script-box">
+      "I am [Name], and I lead the dashboard engineering and SDN integration. Our UI is built in React 19 and TypeScript, designed to resemble a carrier-grade Network Operations Center. The topology you see is rendered as an interactive vector SVG, where the active route is highlighted with animated flowing packets. Now, let me demonstrate our primary test scenario: I will click 'Demo Congestion'. This injects 65ms latency and 18% packet loss on direct link L_S1_S3. Watch the active route: baseline Dijkstra remains trapped on the congested link because it only counts hops, but NetResQ dynamically switches to the 4-hop route via S2 to safeguard throughput and latency. Additionally, NetResQ includes Mininet and Ryu controller integration scripts for Ubuntu and WSL2 environments. This concludes our presentation, and we are ready for your questions."
+    </div>
+
+    <div class="section-title">Key Viva Questions & Answers:</div>
+    <div class="qa-box">
+      <span class="qa-q">Q: How does LLDP discovery work in an SDN controller like Ryu?</span><br>
+      <span class="qa-a">A: The controller sends LLDP packet-out messages to all switch ports. When neighbor switches forward the packet-in back to the controller, the controller maps the adjacency between switch datapath IDs and port numbers.</span>
+    </div>
+  </div>
+
+  <div style="text-align: center; font-size: 8pt; color: #64748b; margin-top: 14px;">
+    NetResQ: An Adaptive Self-Healing Network Using Quality-Aware Routing &bull; Team Presentation & Defense Guide &bull; October 2026
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NetResQ — Comprehensive Project Explanation & Architecture Report</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 16mm 16mm 18mm 16mm;
+      @bottom-right {
+        content: "Page " counter(page);
+        font-size: 8.5pt;
+        color: #64748b;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.55;
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+
+    h1, h2, h3, h4 {
+      color: #0f2744;
+      font-weight: 700;
+      page-break-after: avoid;
+    }
+
+    h1 {
+      font-size: 22pt;
+      line-height: 1.2;
+      margin-bottom: 4px;
+      color: #0369a1;
+      border-bottom: 3px solid #0284c7;
+      padding-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 12pt;
+      color: #475569;
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 13.5pt;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 4px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+
+    h3 {
+      font-size: 11pt;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      color: #0369a1;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+
+    .badge-container {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-primary { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+    .badge-success { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+    .badge-warning { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+
+    .callout {
+      background: #f8fafc;
+      border-left: 4px solid #0284c7;
+      padding: 10px 14px;
+      margin: 12px 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 9.5pt;
+      page-break-inside: avoid;
+    }
+
+    .callout-warning {
+      background: #fffbeb;
+      border-left-color: #f59e0b;
+    }
+
+    .callout-success {
+      background: #f0fdf4;
+      border-left-color: #10b981;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 9pt;
+      page-break-inside: avoid;
+    }
+
+    tr {
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 9px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .formula-box {
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-family: "Consolas", "Courier New", Courier, monospace;
+      font-size: 9pt;
+      margin: 10px 0;
+      border: 1px solid #1e293b;
+      page-break-inside: avoid;
+      line-height: 1.45;
+    }
+
+    .qa-box {
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+    }
+    .qa-q {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 3px;
+      font-size: 10pt;
+    }
+    .qa-a {
+      color: #334155;
+      margin-left: 10px;
+      border-left: 2.5px solid #0284c7;
+      padding-left: 10px;
+      font-size: 9.5pt;
+    }
+
+    .meta-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover & Header -->
+  <h1>NetResQ</h1>
+  <div class="subtitle">An Adaptive Self-Healing Network Using Quality-Aware Routing</div>
+
+  <div class="badge-container">
+    <span class="badge badge-primary">OSI Layer 3 (Network Layer)</span>
+    <span class="badge badge-success">Software-Defined Networking (SDN)</span>
+    <span class="badge badge-warning">FastAPI + NetworkX + React 19</span>
+  </div>
+
+  <div class="meta-box">
+    <div><strong>Project Name:</strong> NetResQ (Network Rescue)</div>
+    <div><strong>Academic Domain:</strong> Computer Networks & SDN</div>
+    <div><strong>Primary Routing Core:</strong> NetworkX (Graph Theory & Dijkstra)</div>
+    <div><strong>Control Plane:</strong> FastAPI REST Backend + Ryu OpenFlow 1.3</div>
+    <div><strong>Presentation Dashboard:</strong> React 19 + TypeScript + Vite</div>
+    <div><strong>Target Emulation:</strong> Standalone Simulation / Mininet + OVS</div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2>1. Executive Summary & Problem Statement</h2>
+  <p>
+    In conventional computer networks, interior gateway routing protocols such as <strong>OSPF (Open Shortest Path First)</strong> and <strong>RIP (Routing Information Protocol)</strong> rely on static link costs or hop counts to calculate shortest paths using Dijkstra's algorithm.
+  </p>
+  <p>
+    <strong>The Core Problem (The "Blind Shortest Path" Flaw):</strong><br>
+    In real-world networks, intermediate links frequently suffer from transient congestion, bufferbloat, physical line noise, or packet drops without suffering a complete physical cable cut. Because conventional shortest-path algorithms only evaluate static configured costs, they continue sending critical traffic over a degraded link as long as its physical port stays UP. This causes severe application degradation, latency spikes, and TCP retransmissions.
+  </p>
+
+  <div class="callout callout-warning">
+    <strong>Example Flaw:</strong> If a direct 1-hop link between Switch 1 and Switch 3 experiences <strong>65ms latency</strong> and <strong>20% packet drops</strong>, standard Dijkstra routing continues to send packets through it simply because it is 1 hop (cost = 1.0), completely ignoring a healthy 2-hop alternate path (via Switch 2) that has only <strong>11ms latency and 0% packet loss</strong>!
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2>2. What NetResQ Does (The Solution)</h2>
+  <p>
+    <strong>NetResQ (Network Rescue)</strong> solves this challenge by implementing an intelligent, adaptive network control engine that provides:
+  </p>
+  <ul>
+    <li><strong>Continuous Link Quality Telemetry:</strong> Tracks four fundamental physical metrics in real time: administrative base cost, latency (ms), packet loss percentage (%), and link utilization (%).</li>
+    <li><strong>Multi-Metric Normalization:</strong> Dimensionless transformation that allows latency, loss percentage, and utilization to be combined mathematically without dimensional skewing.</li>
+    <li><strong>Dynamic Quality-Aware Path Selection:</strong> Employs a composite cost function where links with high loss or latency are penalized, steering traffic over healthier alternative routes.</li>
+    <li><strong>Automated Self-Healing Failover:</strong> Instantly detects link failures, excludes failed edges from the network graph, and recalculates alternate routes in sub-millisecond time.</li>
+    <li><strong>Interactive Operations Dashboard:</strong> A dark-mode operations dashboard built with React 19, allowing operators to visually inspect network topology, manually inject link failures, test congestion, and audit failover events.</li>
+  </ul>
+
+  <!-- SECTION 3 -->
+  <h2>3. The Quality-Aware Routing Algorithm & Mathematics</h2>
+
+  <h3>3.1 Metric Normalization</h3>
+  <p>
+    To mathematically combine milliseconds, percentages, and arbitrary administrative costs, each metric is normalized into a dimensionless scale:
+  </p>
+  <div class="formula-box">
+normalized_latency     = latency_ms / latency_reference_ms    (default reference = 50.0 ms)
+normalized_loss        = packet_loss_percent / 100.0          (range: 0.0 to 1.0)
+normalized_utilization = utilization_percent / 100.0          (range: 0.0 to 1.0)
+  </div>
+
+  <h3>3.2 Composite Edge-Cost Formula</h3>
+  <p>
+    Each usable link in the network graph is assigned a composite cost:
+  </p>
+  <div class="formula-box">
+link_cost = (w_cost &times; C_admin) + (w_latency &times; norm_latency) + (w_loss &times; norm_loss) + (w_util &times; norm_util)
+  </div>
+  <p>
+    <strong>Default Weight Configuration:</strong>
+  </p>
+  <ul>
+    <li><strong>w_cost = 1.0:</strong> Baseline administrative hop weight.</li>
+    <li><strong>w_latency = 1.0:</strong> Penalty for propagation and queuing delay.</li>
+    <li><strong>w_loss = 2.0:</strong> High penalty for packet drops to prevent TCP collapse.</li>
+    <li><strong>w_util = 1.5:</strong> Penalty for link saturation to prevent bottleneck formation.</li>
+  </ul>
+
+  <h3>3.3 Mathematical Proof of Dijkstra Correctness</h3>
+  <div class="callout callout-success">
+    <strong>Guarantee of Optimal Solution:</strong> Dijkstra's shortest path algorithm is mathematically valid for graphs with non-negative edge weights (w &ge; 0). Because all our weights w &ge; 0, and link metrics are physically non-negative, NetResQ enforces a minimum cost floor of MIN_EDGE_COST = 0.001. As a result, no negative edges or cycles can ever exist, and Dijkstra's algorithm is <strong>mathematically guaranteed</strong> to find the global lowest-cost path.
+  </div>
+
+  <h3>3.4 Worked Numerical Example</h3>
+  <p>Consider routing traffic from <strong>Host 1 (H1)</strong> to <strong>Host 4 (H4)</strong>:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Path Option</th>
+        <th>Hops</th>
+        <th>Intermediate Links</th>
+        <th>Latency</th>
+        <th>Packet Loss</th>
+        <th>Calculated Cost</th>
+        <th>Algorithm Selection</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Path A (Direct)</strong></td>
+        <td>3 hops</td>
+        <td>H1 &rarr; S1 &rarr; S3 &rarr; H4</td>
+        <td>67.0 ms</td>
+        <td><strong>18.0 %</strong></td>
+        <td><strong>6.12</strong></td>
+        <td>Chosen by <strong>Baseline Dijkstra</strong> (fewer hops)</td>
+      </tr>
+      <tr>
+        <td><strong>Path B (Detour)</strong></td>
+        <td>4 hops</td>
+        <td>H1 &rarr; S1 &rarr; S2 &rarr; S3 &rarr; H4</td>
+        <td><strong>13.0 ms</strong></td>
+        <td><strong>0.0 %</strong></td>
+        <td><strong>4.79</strong></td>
+        <td>Chosen by <strong>Quality-Aware Routing</strong> (superior quality)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <strong>Result:</strong> Quality-Aware Routing chooses Path B because <strong>4.79 &lt; 6.12</strong>. By taking 1 extra hop through S2, it reduces latency by <strong>54ms</strong> and eliminates <strong>18% packet loss</strong>!
+  </p>
+
+  <!-- SECTION 4 -->
+  <h2>4. Overall Architecture & Implementation</h2>
+  <p>NetResQ is architected into three strictly decoupled tiers:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Tier</th>
+        <th>Primary Tech</th>
+        <th>Key Modules & Functionality</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Frontend</strong></td>
+        <td>React 19, TypeScript, Vite, Vanilla CSS</td>
+        <td>
+          <strong>TopologyView.tsx:</strong> Interactive SVG canvas of switches & hosts.<br>
+          <strong>RoutingComparison.tsx:</strong> Side-by-side algorithm comparison.<br>
+          <strong>MetricCards.tsx:</strong> Real-time telemetry gauges and health scores.<br>
+          <strong>EventLogView.tsx:</strong> Chronological failover audit log.<br>
+          <strong>SettingsView.tsx:</strong> Real-time weight sliders.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Backend API</strong></td>
+        <td>FastAPI, Uvicorn, Pydantic</td>
+        <td>
+          <strong>app/main.py:</strong> ASGI server entrypoint with restricted local CORS.<br>
+          <strong>app/api/routes.py:</strong> REST endpoints for topology, compute, fail, restore, reset.<br>
+          <strong>app/models.py:</strong> Pydantic schemas validating all inputs and outputs.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Routing Core & Adapters</strong></td>
+        <td>Python 3.12, NetworkX</td>
+        <td>
+          <strong>quality_aware.py:</strong> Composite cost formula & Dijkstra path engine.<br>
+          <strong>shortest_path.py:</strong> Baseline hop-count Dijkstra routing.<br>
+          <strong>simulation_adapter.py:</strong> In-memory virtual topology (standalone mode).<br>
+          <strong>sdn_controller_adapter.py:</strong> Interface to Ryu OpenFlow 1.3 controller.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 5 -->
+  <h2>5. How to Demonstrate NetResQ in 5 Steps</h2>
+  <ol>
+    <li>
+      <strong>Healthy Baseline:</strong> Select route <code>H1 &rarr; H4</code>. Observe the green links and the active cyan path taking the direct route (<code>H1 &rarr; S1 &rarr; S3 &rarr; H4</code>).
+    </li>
+    <li>
+      <strong>Simulate a Link Failure:</strong> Click link <code>L_S1_S3</code> on the diagram and click <strong>"Fail Link"</strong>. The link turns red-dashed. NetResQ instantly self-heals and reroutes traffic through <code>S2</code> in <strong>0.48 ms</strong>.
+    </li>
+    <li>
+      <strong>Restore Link:</strong> Click <strong>"Restore Link"</strong>. The link turns green, and the path returns to normal.
+    </li>
+    <li>
+      <strong>Inject Congestion:</strong> Click the <strong>"Demo Congestion"</strong> button in the header. Link <code>L_S1_S3</code> is injected with 65ms delay and 18% loss.
+    </li>
+    <li>
+      <strong>Inspect Comparison:</strong> Open the <strong>"Routing Analysis & Proof"</strong> tab. Show the evaluator that Baseline Dijkstra is trapped using the degraded 3-hop link, while NetResQ automatically selects the 4-hop route via S2 to protect user quality.
+    </li>
+  </ol>
+
+  <!-- SECTION 6 -->
+  <h2>6. Key Viva & Exam Questions (And How to Answer Them)</h2>
+
+  <div class="qa-box">
+    <div class="qa-q">Q1: At which layer of the OSI model does NetResQ operate?</div>
+    <div class="qa-a">NetResQ operates primarily at <strong>OSI Layer 3 (Network Layer)</strong>, making end-to-end routing decisions across switches and subnets.</div>
+  </div>
+
+  <div class="qa-box">
+    <div class="qa-q">Q2: What is the separation of planes in SDN, and how is it used here?</div>
+    <div class="qa-a">SDN separates the <strong>Control Plane</strong> (decision-making logic) from the <strong>Data Plane</strong> (packet forwarding hardware). NetResQ's FastAPI/NetworkX core acts as the centralized control plane, while OpenFlow switches act as the data plane.</div>
+  </div>
+
+  <div class="qa-box">
+    <div class="qa-q">Q3: Why doesn't NetResQ use Bellman-Ford or Floyd-Warshall?</div>
+    <div class="qa-a">Bellman-Ford is slower (O(V &times; E)) and primarily needed for negative edge weights. Because our composite cost function guarantees strictly positive costs (&ge; 0.001), Dijkstra's algorithm (O(E + V log V)) is significantly faster and globally optimal.</div>
+  </div>
+
+  <div class="qa-box">
+    <div class="qa-q">Q4: What is the difference between software rerouting time and physical recovery time?</div>
+    <div class="qa-a">NetResQ's displayed recovery time (~0.5ms to 1.1ms) is the CPU software execution time to prune the graph and run Dijkstra. Physical recovery in hardware additionally incurs optical/copper link loss detection and OpenFlow rule installation (typically 20ms to 100ms).</div>
+  </div>
+
+  <div class="qa-box">
+    <div class="qa-q">Q5: How does the system handle a total network partition?</div>
+    <div class="qa-a">If all links leading to a destination fail, <code>networkx.has_path()</code> returns <code>False</code>. The backend cleanly returns status <code>"no_path"</code>, logs a high-severity error event, and displays a user-friendly partition notice on the dashboard without crashing.</div>
+  </div>
+
+  <hr style="border: 0; border-top: 1px solid #cbd5e1; margin-top: 20px; margin-bottom: 10px;">
+  <div style="text-align: center; font-size: 8pt; color: #64748b;">
+    NetResQ: An Adaptive Self-Healing Network Using Quality-Aware Routing &bull; Comprehensive Project Report &bull; Generated October 2026
+  </div>
+
+</body>
+</html>
