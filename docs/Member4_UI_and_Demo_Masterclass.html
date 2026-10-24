@@ -48,7 +48,7 @@
     }
 
     h2 {
-      font-size: 12.5pt;
+      font-size: 12pt;
       border-bottom: 1px solid #cbd5e1;
       padding-bottom: 3px;
       margin-top: 16px;
@@ -59,7 +59,7 @@
     }
 
     h3 {
-      font-size: 10.5pt;
+      font-size: 10pt;
       margin-top: 10px;
       margin-bottom: 4px;
       color: #0284c7;
@@ -157,7 +157,7 @@
       border-radius: 6px;
       border: 1px solid #cbd5e1;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      max-height: 230px;
+      max-height: 220px;
     }
 
     .img-caption {
@@ -195,7 +195,7 @@
 
   <!-- Title & Header -->
   <h1>Member 4 Presentation Masterclass</h1>
-  <div class="subtitle">Complete UI Breakdown, Every Button & Slider Explained, Live Demo Script & Math Defense</div>
+  <div class="subtitle">Complete UI Breakdown, Every Navigation Section, Every Button & Slider Explained</div>
 
   <div class="badge-bar">
     <span class="badge badge-blue">Role: Frontend UI/UX & Live Demo Lead</span>
@@ -209,11 +209,9 @@
 
   <!-- SECTION 1 -->
   <h2>1. Overview of the Dashboard Screen</h2>
-  <p>Here is what the dashboard looks like when running live at <code>http://localhost:5173</code>:</p>
-
   <div class="img-container">
     <img src="images/dashboard_overview.png" alt="NetResQ Dashboard Overview">
-    <div class="img-caption">Figure 1: Full NetResQ Operations Dashboard showing header controls, 4 metric cards, and interactive SVG topology.</div>
+    <div class="img-caption">Figure 1: NetResQ Operations Dashboard showing header controls, 4 metric cards, and interactive SVG topology.</div>
   </div>
 
   <!-- SECTION 2 -->
@@ -265,7 +263,7 @@
   <div class="page-break"></div>
 
   <!-- SECTION 3 -->
-  <h2>3. Explaining the 4 Telemetry Metric Cards</h2>
+  <h2>3. The 4 Telemetry Metric Cards</h2>
 
   <table>
     <thead>
@@ -340,7 +338,7 @@
   <div class="page-break"></div>
 
   <!-- SECTION 5 -->
-  <h2>5. Routing Analysis & Performance Comparison</h2>
+  <h2>5. Tab 3: Routing Analysis & Performance Comparison</h2>
 
   <div class="img-container">
     <img src="images/routing_analysis.png" alt="Routing Analysis Tab">
@@ -369,36 +367,148 @@
     <div class="speech-box"><strong>What to say:</strong> "This table provides full explainability, showing the exact latency and cost breakdown for each individual hop on the selected route."</div>
   </div>
 
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
   <!-- SECTION 6 -->
-  <h2>6. Telemetry Trend Chart & Audit Event Stream</h2>
+  <h2>6. Tab 4: Operational Events Section (Every Element Explained)</h2>
 
   <div class="img-container">
-    <img src="images/telemetry_events.png" alt="Telemetry Trend and Event Stream">
-    <div class="img-caption">Figure 4: Real-time SVG telemetry trend line chart and chronological operational event log.</div>
+    <img src="images/operational_events_tab.png" alt="Operational Events Tab">
+    <div class="img-caption">Figure 4: Operational Events Audit Log showing severity filter dropdown, Clear Log button, and chronological event stream.</div>
+  </div>
+
+  <p>
+    When you click the <strong>"Operational Events"</strong> tab in the navigation bar, it displays the live audit log of all system transitions. Here is what every control does:
+  </p>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">EVENT 1</span> Severity Filter Dropdown ('All Severities')</div>
+    <p><strong>What it does:</strong> Allows the operator to filter the audit log by severity level: <code>All Severities</code>, <code>Errors Only</code>, <code>Warnings Only</code>, <code>Success Only</code>, and <code>Info Only</code>.</p>
+    <div class="speech-box"><strong>What to say:</strong> "This filter dropdown lets an administrator isolate critical alerts — such as network partition errors or link failure warnings — from routine info messages."</div>
   </div>
 
   <div class="ui-element-card">
-    <div class="ui-element-title"><span class="ui-tag">CHART</span> Real-Time Network Telemetry Trend Chart</div>
-    <p>Custom SVG line chart plotting rolling snapshots of Latency (cyan) and Health Score (green).</p>
-    <div class="speech-box"><strong>What to say:</strong> "This chart renders a rolling historical trend of average latency and health score, updating every 3 seconds to show network stability over time."</div>
+    <div class="ui-element-title"><span class="ui-tag">EVENT 2</span> 'Clear Log' Button (Trash Icon)</div>
+    <p><strong>What it does:</strong> Sends a <code>POST /api/events/clear</code> request to clear the displayed event history and logs a fresh audit entry stating that the log was cleared by the operator.</p>
+    <div class="speech-box"><strong>What to say:</strong> "Clicking 'Clear Log' purges the audit view for a clean demonstration run without affecting the underlying network state."</div>
   </div>
 
   <div class="ui-element-card">
-    <div class="ui-element-title"><span class="ui-tag">AUDIT LOG</span> Operational Event Log</div>
-    <p>Reverse chronological list with severity badges (<code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>SUCCESS</code>), timestamps, and JSON details.</p>
-    <div class="speech-box"><strong>What to say:</strong> "Every link failure, restoration, and rerouting action is audited here with timestamps and failover duration, providing complete operational transparency."</div>
+    <div class="ui-element-title"><span class="ui-tag">EVENT 3</span> Severity Badges (INFO, WARNING, ERROR, SUCCESS)</div>
+    <p><strong>What it does:</strong> Visual badges color-coding the nature of the network event:</p>
+    <ul>
+      <li><span class="badge badge-blue">INFO</span>: System startup, metric parameter updates, simulation resets.</li>
+      <li><span class="badge badge-amber">WARNING</span>: Link failure where an alternate path was found, demo congestion injected.</li>
+      <li><span class="badge" style="background:#fee2e2; color:#dc2626;">ERROR</span>: Complete network partition or unreachable destination.</li>
+      <li><span class="badge badge-green">SUCCESS</span>: Link successfully restored to service.</li>
+    </ul>
+    <div class="speech-box"><strong>What to say:</strong> "Our audit engine assigns distinct severity levels: green for restorations, yellow for link failovers, and red for partitioned destinations."</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">EVENT 4</span> Event Type & Timestamps</div>
+    <p><strong>What it does:</strong> Displays the event tag (e.g. <code>LINK_FAILURE</code>, <code>LINK_RESTORED</code>, <code>SIMULATION_RESET</code>) alongside local/UTC timestamps.</p>
+    <div class="speech-box"><strong>What to say:</strong> "Each event is stamped with millisecond precision and recorded in reverse chronological order, making it straightforward to trace recovery timelines."</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">EVENT 5</span> JSON Details Tag</div>
+    <p><strong>What it does:</strong> Displays a dark code chip at the bottom of the card containing exact metadata, such as the previous path, new path, and calculated failover duration (e.g. <code>{"recalculation_time_ms": 0.48}</code>).</p>
+    <div class="speech-box"><strong>What to say:</strong> "This metadata chip provides machine-readable diagnostic details showing both the old path and the newly elected alternate route."</div>
   </div>
 
   <!-- PAGE BREAK -->
   <div class="page-break"></div>
 
   <!-- SECTION 7 -->
-  <h2>7. The Formula Part: How to Explain It Simply</h2>
+  <h2>7. Tab 5: Weights & SDN Settings Section (Every Button & Slider Explained)</h2>
+
+  <div class="img-container">
+    <img src="images/weights_sdn_settings_tab.png" alt="Weights and SDN Settings Tab">
+    <div class="img-caption">Figure 5: Weights & SDN Settings tab showing live formula box, 5 sliders/inputs, Save/Reset buttons, and Mininet setup instructions.</div>
+  </div>
 
   <p>
-    During your demo, the evaluator may ask: <em>"How does the algorithm calculate the cost to decide which route to take?"</em><br>
-    Here is the exact formula and the simple way to explain it:
+    When you click the <strong>"Weights & SDN Settings"</strong> tab, you have full control over the mathematical routing engine and environment configuration:
   </p>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">TOP BAR</span> 'Reset Defaults' Button</div>
+    <p><strong>What it does:</strong> Instantly resets all 4 weighting coefficients (1.0, 1.0, 2.0, 1.5) and the 50ms reference latency back to standard defaults and recalculates routes.</p>
+    <div class="speech-box"><strong>What to say:</strong> "Clicking 'Reset Defaults' restores the recommended balance between hop count, latency, packet loss, and utilization."</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">TOP BAR</span> 'Save Weights' Button</div>
+    <p><strong>What it does:</strong> Sends a <code>POST /api/weights</code> request to update the active weighting policy on the backend and triggers dynamic path re-evaluation across all host pairs.</p>
+    <div class="speech-box"><strong>What to say:</strong> "Clicking 'Save Weights' commits our custom weights to the backend routing engine, triggering an immediate re-evaluation of all paths."</div>
+  </div>
+
+  <div class="ui-element-card">
+    <div class="ui-element-title"><span class="ui-tag">MATH BOX</span> Live Mathematical Cost Formula Box</div>
+    <p><strong>What it does:</strong> Displays the live, interactive cost formula with the currently configured numerical coefficients:</p>
+    <div class="formula-box">
+link_cost = (w_cost &times; C_admin) + (w_latency &times; [Lat / ref_ms]) + (w_loss &times; [Loss% / 100]) + (w_util &times; [Util% / 100])
+    </div>
+    <div class="speech-box"><strong>What to say:</strong> "This box shows our normalized composite cost equation updating in real time as the sliders are moved."</div>
+  </div>
+
+  <h3>The 5 Sliders & Inputs (What Each Does):</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Slider / Input</th>
+        <th>Default Value</th>
+        <th>Range</th>
+        <th>What It Does & What You Say</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Configured Cost Weight (w_cost)</strong></td>
+        <td><code>1.00</code></td>
+        <td>0.0 to 5.0</td>
+        <td>"Controls the importance of administrative hop count. Increasing this makes the algorithm behave more like traditional Dijkstra."</td>
+      </tr>
+      <tr>
+        <td><strong>Latency Weight (w_latency)</strong></td>
+        <td><code>1.00</code></td>
+        <td>0.0 to 5.0</td>
+        <td>"Penalizes propagation and queuing delays. Useful for interactive audio/video traffic."</td>
+      </tr>
+      <tr>
+        <td><strong>Packet Loss Weight (w_loss)</strong></td>
+        <td><code>2.00</code></td>
+        <td>0.0 to 10.0</td>
+        <td>"Heavily penalizes drop-prone links. We set it to 2.0 because packet loss causes TCP timeouts and throughput collapse."</td>
+      </tr>
+      <tr>
+        <td><strong>Utilization Weight (w_util)</strong></td>
+        <td><code>1.50</code></td>
+        <td>0.0 to 5.0</td>
+        <td>"Penalizes saturated links to avoid buffer overflow and distribute traffic evenly."</td>
+      </tr>
+      <tr>
+        <td><strong>Latency Reference Normalizer</strong></td>
+        <td><code>50 ms</code></td>
+        <td>10 to 500 ms</td>
+        <td>"Normalizes milliseconds into decimals: normalized_lat = latency / ref_ms."</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="ui-element-card" style="margin-top: 10px;">
+    <div class="ui-element-title"><span class="ui-tag">SDN PANEL</span> Operating Mode & Ubuntu/WSL2 Real SDN Setup Box</div>
+    <p><strong>What it does:</strong> Displays the current operating status badge (<code>Simulation Mode (Standalone)</code>) and copy-pasteable terminal commands for launching the <strong>Ryu OpenFlow 1.3 Controller</strong> and <strong>Mininet</strong> on Ubuntu or Windows Subsystem for Linux (WSL2).</p>
+    <div class="speech-box"><strong>What to say:</strong> "This lower panel documents our real-world SDN integration. NetResQ includes ready-to-run Python scripts for launching Mininet with Open vSwitch and the Ryu OpenFlow 1.3 controller under Linux or WSL2."</div>
+  </div>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- SECTION 8 -->
+  <h2>8. The Formula Part: How to Explain It Simply</h2>
 
   <div class="formula-box">
 normalized_latency = latency_ms / 50.0 ms
@@ -411,14 +521,12 @@ link_cost = (1.0 &times; C_admin) + (1.0 &times; norm_latency) + (2.0 &times; no
   <div class="ui-element-card">
     <div class="ui-element-title">The 3-Sentence Formula Punchline (Memorize This!):</div>
     <div class="speech-box">
-      <strong>"We normalize latency against 50ms, and packet loss and utilization into decimals between 0 and 1. We assign the highest weight (2.0) to packet loss because packet drops destroy TCP performance. When direct link L_S1_S3 suffers 18% loss, its calculated cost spikes from 1.44 to 3.94, making the 4-hop clean route via S2 mathematically cheaper (4.79 vs 6.12)!"</strong>
+      <strong>"We normalize latency against 50ms, and packet loss and utilization into decimals between 0 and 1. We assign the highest weight (2.0) to packet loss because packet drops destroy TCP throughput. When direct link L_S1_S3 suffers 18% loss, its calculated cost spikes from 1.44 to 3.94, making the 4-hop clean route via S2 mathematically cheaper (4.79 vs 6.12)!"</strong>
     </div>
   </div>
 
-  <!-- SECTION 8 -->
-  <h2>8. Step-by-Step Live Demo Script (Word-for-Word)</h2>
-
-  <p>Follow this exact 5-step script during your presentation:</p>
+  <!-- SECTION 9 -->
+  <h2>9. Step-by-Step Live Demo Script (Word-for-Word Walkthrough)</h2>
 
   <div class="ui-element-card">
     <strong>Step 1 — Introduce the UI (30 Seconds):</strong><br>
@@ -427,7 +535,7 @@ link_cost = (1.0 &times; C_admin) + (1.0 &times; norm_latency) + (2.0 &times; no
 
   <div class="ui-element-card">
     <strong>Step 2 — Click 'Demo Congestion' (45 Seconds):</strong><br>
-    <em>"Now, let me trigger our primary test case. I will click the amber 'Demo Congestion' button in the header. Notice what happens immediately: direct link L_S1_S3 turns yellow with 65ms latency and 18% packet loss. Watch the glowing cyan active route: it has automatically detoured through Switch 2! Even though going through S2 takes 4 hops instead of 3, our Quality-Aware algorithm avoids the congested link to protect quality."</em>
+    <em>"Now, let me trigger our primary test case. I will click the amber 'Demo Congestion' button in the header. Notice what happens immediately: direct link L_S1_S3 turns yellow with 65ms latency and 18% packet loss. Watch the glowing cyan active route: it has automatically detoured through Switch 2! Even though going through S2 takes 4 hops instead of 3, our Quality-Aware algorithm avoids the congested link to protect user quality."</em>
   </div>
 
   <div class="ui-element-card">
@@ -441,13 +549,13 @@ link_cost = (1.0 &times; C_admin) + (1.0 &times; norm_latency) + (2.0 &times; no
   </div>
 
   <div class="ui-element-card">
-    <strong>Step 5 — Conclude & Reset (15 Seconds):</strong><br>
-    <em>"Finally, I click 'Reset Scenario' to return our network back to its clean baseline state. This completes our live demonstration of NetResQ."</em>
+    <strong>Step 5 — Show Weights & Conclude (30 Seconds):</strong><br>
+    <em>"Finally, in our Weights & SDN Settings tab, we can adjust policy sliders in real time or reset to defaults. Clicking 'Reset Scenario' returns our network back to its clean baseline state. This completes our live demonstration of NetResQ."</em>
   </div>
 
   <hr style="border: 0; border-top: 1px solid #cbd5e1; margin-top: 16px; margin-bottom: 8px;">
   <div style="text-align: center; font-size: 7.5pt; color: #64748b;">
-    NetResQ: Member 4 UI Breakdown & Live Demonstration Guide &bull; October 2026
+    NetResQ: Member 4 UI Breakdown & Live Demonstration Guide &bull; Comprehensive Edition &bull; October 2026
   </div>
 
 </body>
